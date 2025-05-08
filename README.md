@@ -1,73 +1,107 @@
-# Welcome to your Lovable project
+BudgetBuddy
+BudgetBuddy is a Python-based web app designed for the HackSphere High School Community Finance Hackathon to help low-income families manage budgets and reduce financial stress. Built with Flask, SQLite, scikit-learn, and Matplotlib, it offers an AI-powered Smart Budget Planner, Expense Tracker, Community Resources, and an Expense Risk Forecaster, prioritizing accessibility for users with limited financial literacy. This app empowers families to achieve financial stability through simple, community-focused tools.
+Features
 
-## Project info
+Smart Budget Planner: Users input income (e.g., daily wages) and expenses (e.g., rent). A linear regression model (scikit-learn) suggests a weekly budget, prioritizing essentials.
+Expense Tracker: Log daily expenses via a form, with spending trends visualized in a Matplotlib bar chart.
+Community Resources: Select a location from a dropdown to access links to local aid programs (e.g., food banks).
+Expense Risk Forecaster: An AI model predicts budget overruns based on spending patterns, suggesting cost-saving tips (e.g., "Cook at home").
 
-**URL**: https://lovable.dev/projects/08ef66ac-4eb6-4d6e-8769-f7fe2542ff75
+Tech Stack
 
-## How can I edit this code?
+Language: Python
+Web Framework: Flask (frontend and backend)
+Database: SQLite (stores budgets and expenses)
+AI: scikit-learn (linear regression for budgeting and risk forecasting)
+Visualization: Matplotlib (spending charts)
+Styling: Bootstrap (mobile-responsive, accessible UI)
 
-There are several ways of editing your application.
+Prerequisites
 
-**Use Lovable**
+Python 3.8 or higher
+pip (Python package manager)
+A web browser (e.g., Chrome, Firefox)
+Optional: REPL.it or VS Code for development
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/08ef66ac-4eb6-4d6e-8769-f7fe2542ff75) and start prompting.
+Setup Instructions
 
-Changes made via Lovable will be committed automatically to this repo.
+Clone or Download the Project
 
-**Use your preferred IDE**
+Download the project files or clone the repository (if hosted).
+Ensure the following files are present:
+app.py: Main Flask app
+model.py: AI model logic
+templates/: HTML templates (budget.html, tracker.html, resources.html)
+static/: CSS and chart images
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-Follow these steps:
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Install Dependencies
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Open a terminal in the project directory.
+Run:pip install flask sqlite3 scikit-learn matplotlib numpy
 
-# Step 3: Install the necessary dependencies.
-npm i
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
 
-**Edit a file directly in GitHub**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Initialize the Database
 
-**Use GitHub Codespaces**
+The app automatically creates a data.db SQLite file on first run to store expenses.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
 
-## What technologies are used for this project?
+Run the App
 
-This project is built with:
+In the terminal, navigate to the project directory and run:python app.py
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
 
-## How can I deploy this project?
+Open a browser and go to http://localhost:5000 (or the URL provided by REPL.it).
 
-Simply open [Lovable](https://lovable.dev/projects/08ef66ac-4eb6-4d6e-8769-f7fe2542ff75) and click on Share -> Publish.
 
-## Can I connect a custom domain to my Lovable project?
+Test the App
 
-Yes, you can!
+Navigate to the Budget Planner, enter sample income (e.g., $100) and expenses (e.g., $50 rent).
+Log expenses in the Expense Tracker and view the spending chart.
+Select a location in Community Resources to see aid links.
+Check the Expense Risk Forecaster for budget alerts.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+
+File Structure
+budgetbuddy/
+├── app.py              # Main Flask app with routes
+├── model.py            # AI model (linear regression)
+├── data.db             # SQLite database (auto-generated)
+├── templates/          # HTML templates
+│   ├── budget.html
+│   ├── tracker.html
+│   └── resources.html
+├── static/             # CSS and chart images
+│   ├── style.css
+│   └── chart.png
+└── README.md           # This file
+
+Usage
+
+Budget Planner: Enter weekly income and expenses to get a suggested budget.
+Expense Tracker: Log daily expenses (e.g., $5 for food) and view a chart of spending by category.
+Community Resources: Choose a location to access financial aid links.
+Risk Forecaster: Receive alerts if spending risks exceeding your budget, with tips to save.
+
+Hackathon Context
+BudgetBuddy was built for the HackSphere High School Community Finance Hackathon (deadline: May 11, 2025). It addresses the challenge of developing a Python-based finance app that strengthens communities. The app tackles financial stress in low-income families, incorporates AI for risk management, and ensures accessibility, aligning with the hackathon’s goals.
+Troubleshooting
+
+Flask not found: Ensure dependencies are installed (pip install flask).
+Chart not displaying: Verify Matplotlib saved chart.png to static/.
+Database errors: Check data.db permissions or reinitialize with init_db() in app.py.
+AI predictions off: Ensure sample data in model.py is valid.
+
+Team
+
+Developed by [Your Team Name] for HackSphere 2025.
+Roles: [List roles, e.g., frontend, AI, database, or leave blank if solo].
+
+License
+This project is for educational purposes and submitted to the HackSphere Hackathon. No formal license is applied.
+![Screenshot 2025-05-08 171752](https://github.com/user-attachments/assets/1ddfe780-ab99-4961-9d19-bebd0954574c)
